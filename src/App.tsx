@@ -3,23 +3,18 @@ import React from "react";
 import "./App.css";
 
 import Title from "./components/Title/Title";
+import Todos from "./components/Todos/Todos";
 
-function App() {
+Class App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Title />
-      </header>
+    <div className="App-header">
+      <Title />
 
-      
+      <div className="App-content">
+        <Todos />
+      </div>
     </div>
   );
 }
 
 export default App;
-
-/*
-Logic behind creating new entries
-Create-Button
-Onclick of the create button -> create a new TO-DO entry
-*/

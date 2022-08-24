@@ -11,7 +11,7 @@ class Title extends Component<{}, {}> {
   render() {
     return (
       <div className="titleContainer">
-        <h2>TO-DO List</h2>
+        <h2 className="title">To-Do List</h2>
         <AddButton />
       </div>
     );
