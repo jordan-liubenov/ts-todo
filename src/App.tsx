@@ -5,7 +5,7 @@ import "./App.css";
 import Title from "./components/Title/Title";
 import Todos from "./components/Todos/Todos";
 
-Class App() {
+function App() {
   return (
     <div className="App-header">
       <Title />
