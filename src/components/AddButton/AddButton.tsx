@@ -2,19 +2,15 @@ import { Component } from "react";
 
 import "../AddButton/AddButton.css";
 
-class AddButton extends Component<{}, {}> {
-  constructor(props: Object) {
+class AddButton extends Component<{ setCreatedTodo: Function }, {}> {
+  constructor(props: any) {
     super(props);
   }
-
-  clickHandler = () => {
-    console.log(this);
-  };
 
   render() {
     return (
       <div className="addButtonDiv">
-        <button className="addButton" onClick={this.clickHandler}>
+        <button className="addButton" onClick={() => this.props.setCreatedTodo()}>
           Add New
         </button>
       </div>

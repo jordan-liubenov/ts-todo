@@ -1,0 +1,20 @@
+.textAreaContainer {
+  display: flex;
+  margin: auto;
+}
+
+.todoTextArea {
+  margin: auto;
+  padding: 10px;
+  margin-bottom: 20px;
+  resize: none;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.todoTextArea:focus {
+  outline: none;
+  box-shadow: 0 0 15px #719ECE;
+  transition: all 0.5s;
+}

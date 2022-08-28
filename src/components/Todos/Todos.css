@@ -1,3 +1,8 @@
+.todoContainer {
+  position: relative;
+  margin: 120px;
+}
+
 .singleEntry {
   display: flex;
   border: 2px solid rgba(128, 128, 128, 0.35);
@@ -8,23 +13,40 @@
 
 .taskName {
   float: left;
-  margin: 0px 40px;
+  margin: 0px 100px 0px 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
 }
 
 .deleteButton {
-  margin: 0px 5px 0px 5px;
+  margin: 0px 5px 0px 0px;
   padding: 10px;
   color: white;
+  font-size: 15px;
   background-color: rgb(128, 9, 9);
   border: 2px solid rgba(128, 128, 128, 0.35);
   border-radius: 5px;
 }
 
+.deleteButton:hover {
+  cursor: pointer;
+  background-color: rgb(96, 26, 26);
+  transition: all 0.5s;
+}
+
 .completedButton {
-  margin: 0px 5px 0px 5px;
+  margin: 0px 5px 0px 60px;
   padding: 10px;
   color: white;
+  font-size: 15px;
   background-color: rgba(61, 151, 4, 0.666);
   border: 2px solid rgba(128, 128, 128, 0.35);
   border-radius: 5px;
+}
+
+.completedButton:hover {
+  cursor: pointer;
+  background-color: rgba(78, 132, 44, 0.666);
+  transition: all 0.5s;
 }
