@@ -1,6 +1,8 @@
 .todoContainer {
+  /* display: flex; */
+  /* margin-top: 220px; */
+  /* flex-direction: row; */
   position: relative;
-  margin: 120px;
 }
 
 .singleEntry {
