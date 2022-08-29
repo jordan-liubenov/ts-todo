@@ -2,8 +2,7 @@ import { Component } from "react";
 
 import "./App.css";
 
-import Title from "./components/Title/Title";
-import Todos from "./components/Todos/Todos";
+import Main from "./components/Main/Main";
 
 class App extends Component<{}, { currentTextAreaValue: string; allTodos: string[] }> {
   constructor(props: any) {
@@ -16,10 +15,15 @@ class App extends Component<{}, { currentTextAreaValue: string; allTodos: string
   }
 
   componentDidMount() {
-    let todoArray = localStorage.getItem("todoArray");
+    let todoArray: any = localStorage.getItem("todoArray");
     if (todoArray == null) {
       const newToDoArray: string[] = [];
       localStorage.setItem("todoArray", JSON.stringify(newToDoArray));
+    } else {
+      todoArray = JSON.parse(todoArray);
+      this.setState({
+        allTodos: todoArray,
+      });
     }
   }
 
@@ -34,20 +38,29 @@ class App extends Component<{}, { currentTextAreaValue: string; allTodos: string
     if (this.state.currentTextAreaValue != "") {
       if (todoArr.includes(this.state.currentTextAreaValue)) return; //if task exists, prevent duplicate
       todoArr.push(this.state.currentTextAreaValue);
-      this.setState({
-        allTodos: todoArr,
-      });
       localStorage.setItem("todoArray", JSON.stringify(todoArr)); //update localStorage value with newly added task
+      let currentLocalStorageArray: any = localStorage.getItem("todoArray");
+      currentLocalStorageArray = JSON.parse(currentLocalStorageArray);
+      this.setState({
+        allTodos: currentLocalStorageArray,
+      });
     }
+  };
+
+  updateAllTodos = (arr: string[]) => {
+    this.setState({
+      allTodos: arr,
+    });
   };
 
   render() {
     return (
       <div className="App">
-        <Title
+        <Main
           setCreatedTodo={this.setCreatedTodo}
           setTextAreaValue={this.setTextAreaValue}
           allTodos={this.state.allTodos}
+          updateAllTodos={this.updateAllTodos}
         />
       </div>
     );

@@ -15,10 +15,11 @@
 
 .taskName {
   float: left;
-  margin: 0px 100px 0px 0px;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* margin: 0px 100px 0px 0px; */
+  /* padding-left: 10px;
+  padding-right: 10px; */
   border-radius: 10px;
+  width: 100%;
 }
 
 .deleteButton {
