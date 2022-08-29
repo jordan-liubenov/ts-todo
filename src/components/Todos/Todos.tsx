@@ -11,6 +11,16 @@ class Todos extends Component<{ allTodos: string[]; updateAllTodos: Function }, 
     return Math.random() * 120;
   };
 
+  completeTodo = (e: any) => {
+    let taskName = e.target.parentElement.getElementsByTagName("span")[0];
+
+    if (taskName.style.textDecoration == "line-through") {
+      taskName.style.textDecoration = "none";
+    } else {
+      taskName.style.textDecoration = "line-through";
+    }
+  };
+
   deleteTodo = (task: string) => {
     let currentTodoArray: any = localStorage.getItem("todoArray");
     currentTodoArray = JSON.parse(currentTodoArray);
@@ -27,7 +37,9 @@ class Todos extends Component<{ allTodos: string[]; updateAllTodos: Function }, 
             <div className="todoEntry" key={this.setRandomKey()}>
               <p className="singleEntry">
                 <span className="taskName">{task}.</span>{" "}
-                <button className="completedButton">✔</button>
+                <button className="completedButton" onClick={(e) => this.completeTodo(e)}>
+                  ✔
+                </button>
                 <button className="deleteButton" onClick={() => this.deleteTodo(task)}>
                   ✖
                 </button>

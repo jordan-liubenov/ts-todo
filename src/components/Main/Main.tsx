@@ -24,7 +24,10 @@ class Main extends Component<
         <div className="titleElements">
           <h2 className="title">To-Do List</h2>
           <TodoTextArea setTextAreaValue={this.props.setTextAreaValue} />
-          <AddButton setCreatedTodo={this.props.setCreatedTodo} />
+          <AddButton
+            setCreatedTodo={this.props.setCreatedTodo}
+            setTextAreaValue={this.props.setTextAreaValue}
+          />
           <Todos allTodos={this.props.allTodos} updateAllTodos={this.props.updateAllTodos} />
         </div>
       </div>

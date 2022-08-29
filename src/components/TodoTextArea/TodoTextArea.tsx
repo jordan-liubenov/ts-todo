@@ -11,7 +11,9 @@ class TodoTextArea extends Component<{ setTextAreaValue: Function }, { newTodo: 
     return (
       <div className="textAreaContainer">
         <textarea
-          cols={40}
+          cols={25}
+          rows={1}
+          maxLength={25}
           onChange={(e) => this.props.setTextAreaValue(e)}
           className="todoTextArea"
           placeholder="New task name here.."

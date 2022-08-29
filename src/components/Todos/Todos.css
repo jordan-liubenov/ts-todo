@@ -53,3 +53,7 @@
   background-color: rgba(78, 132, 44, 0.666);
   transition: all 0.5s;
 }
+
+.completedTodo {
+  text-decoration: line-through;
+}
